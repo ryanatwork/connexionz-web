@@ -1,36 +1,39 @@
-%h2 Platform
-= @platforms.platform_tag
-= @platforms.platform_no
-= @platforms.name
-= @platforms.bearing_to_road
-= @platforms.road_name
-= @platforms.lat
-= @platforms.long
+%h2 Bus Stop
+- if @platforms.nil?
+  %h3 No stop found
+- else
+  = @platforms.platform_tag
+  = @platforms.platform_no
+  = @platforms.name
+  = @platforms.bearing_to_road
+  = @platforms.road_name
+  = @platforms.lat
+  = @platforms.long
 
-%table
-  %tr
-    %th Route
-    %th Destination
-    %th ETA
-  - if @route_et.route.nil?
-    %td= "No arrivals for next #{@arrival_scope} minutes"
-  - elsif @route_et.route.class == Array
-    - @route_et.route.each do |platform|
-      %tr
-        %td= platform.route_no
-        - if platform.destination.class == Array
-          - platform.destination.each do |destination|
-            %td= destination.name
-        - else
-          %td= platform.destination.name
-        - if platform.destination.trip.class == Array
-          - platform.destination.trip.each do |trip|
-            %td= trip.eta
-        - else
-          %td= platform.destination.trip.eta
-  - else
+  %table
     %tr
-      %td= @route_et.route.route_no
-      %td= @route_et.route.destination.name
-      %td= @route_et.route.destination.trip.eta
+      %th Route
+      %th Destination
+      %th ETA
+    - if @route_et.route.nil?
+      %td= "No arrivals for next #{@arrival_scope} minutes"
+    - elsif @route_et.route.class == Array
+      - @route_et.route.each do |platform|
+        %tr
+          %td= platform.route_no
+          - if platform.destination.class == Array
+            - platform.destination.each do |destination|
+              %td= destination.name
+          - else
+            %td= platform.destination.name
+          - if platform.destination.trip.class == Array
+            - platform.destination.trip.each do |trip|
+              %td= trip.eta
+          - else
+            %td= platform.destination.trip.eta
+    - else
+      %tr
+        %td= @route_et.route.route_no
+        %td= @route_et.route.destination.name
+        %td= @route_et.route.destination.trip.eta
 
