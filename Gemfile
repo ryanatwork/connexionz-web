@@ -25,10 +25,14 @@ group :production do
   gem 'thin'
 end
 
+
 group :development, :test do
-  gem 'autotest'
   gem 'rspec-rails'
   gem 'sqlite3'
+end
+
+group :development do
+  gem 'autotest'
 end
 
 group :test do
