@@ -12,4 +12,11 @@ describe Platform do
     end
   end
 
+  describe "connexionz" do
+    it "should return a new Connexionz client" do
+      @test = Platform.new.connexionz
+      @test.should be_a Connexionz::Client
+    end
+
+  end
 end
