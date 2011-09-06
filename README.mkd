@@ -20,9 +20,7 @@ You can see a running version of the application at
     rake db:migrate
 
     #populate the database with stops
-    rails c
-    Platform.new.add_platforms
-
+    rake db:seed
 
 ## <a name="contributing">Contributing</a>
 In the spirit of [free software][free-sw], **everyone** is encouraged to help improve this project.
