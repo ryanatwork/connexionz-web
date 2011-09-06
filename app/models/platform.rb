@@ -6,15 +6,13 @@ class Platform < ActiveRecord::Base
     @platforms = client.platform.platforms.platform
 
     @platforms.each do |platform|
-      platforms = Platform.new
-      platforms.platform_tag = platform.platform_tag
-      platforms.platform_no = platform.platform_no
-      platforms.name = platform.name
-      platforms.bearing_to_road = platform.bearing_to_road
-      platforms.road_name = platform.road_name
-      platforms.lat = platform.lat
-      platforms.long = platform.long
-      platforms.save
+      Platform.create(:platform_tag => platform.platform_tag,
+        :platform_no => platform.platform_no,
+        :name => platform.name,
+        :bearing_to_road => platform.bearing_to_road,
+        :road_name => platform.road_name,
+        :lat => platform.position.lat,
+        :long => platform.position.long)
     end
   end
 
