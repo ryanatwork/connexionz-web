@@ -1,6 +1,7 @@
 %h2 Search Bus Stop
+%br
 = form_tag('/platforms', :method => :get) do
     Stop Number:
     = text_field_tag :id, params[:id]
-    = submit_tag "Search"
+    = submit_tag "Search", :class => "btn primary"
 
