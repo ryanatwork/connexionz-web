@@ -1,9 +1,7 @@
 ConnexionzWeb::Application.routes.draw do
 
-  get "eta/index"
-
   resources :platforms, :only => [:index, :show]
-
+  resources :eta, :only => [:index]
   root :to => "welcome#index"
 
 end
