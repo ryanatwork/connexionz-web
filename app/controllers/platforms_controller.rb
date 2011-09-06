@@ -1,10 +1,14 @@
 class PlatformsController < ApplicationController
+  respond_to :html, :xml, :json
+
   def index
     if !params[:id].nil?
       redirect_to platform_path(params[:id])
     else
       @platforms = Platform.all
     end
+
+    respond_with(@platforms)
   end
 
   def show
@@ -13,10 +17,8 @@ class PlatformsController < ApplicationController
     @route_et = Platform.new.route_et(params[:id])
     @arrival_scope = Platform.new.arrival_scope(params[:id])
 
-   respond_to do |format|
-     format.html
-     format.json { render :json => @platforms }
-   end
+    respond_with(@route_et)
+
   end
 
 end
