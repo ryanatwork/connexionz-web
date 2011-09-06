@@ -1,0 +1,16 @@
+%h1 Platforms
+
+%table
+  %tr
+    %th Platform Number
+    %th Name
+    %th Road Name
+  - @platforms.each do |platform|
+    %tr
+      - if platform.platform_no.nil?
+        %td
+      - else
+        %td= link_to platform.platform_no, platform_path(platform.platform_no)
+      %td= platform.name
+      %td= platform.road_name
+
