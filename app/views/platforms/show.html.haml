@@ -60,3 +60,5 @@
         %td= @route_et.route.destination.name
         %td= @route_et.route.destination.trip.eta
 
+= form_tag('/eta', :method => :get) do
+  = submit_tag "Back", :class => "btn primary"
