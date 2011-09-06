@@ -34,6 +34,5 @@ end
 group :test do
   gem 'mocha'
   gem 'simplecov'
-  gem 'webmock'
 end
 
