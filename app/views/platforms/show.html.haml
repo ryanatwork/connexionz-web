@@ -2,13 +2,35 @@
 - if @platforms.nil?
   %h3 No stop found
 - else
-  = @platforms.platform_tag
-  = @platforms.platform_no
-  = @platforms.name
-  = @platforms.bearing_to_road
-  = @platforms.road_name
-  = @platforms.lat
-  = @platforms.long
+  %dl
+    %dt
+      platform_tag
+      %dd
+        = @platforms.platform_tag
+    %dt
+      platform_no
+      %dd
+        = @platforms.platform_no
+    %dt
+      name
+      %dd
+        = @platforms.name
+    %dt
+      bearing_to_road
+      %dd
+        = @platforms.bearing_to_road
+    %dt
+      road_name
+      %dd
+        = @platforms.road_name
+    %dt
+      lat
+      %dd
+        = @platforms.lat
+    %dt
+      long
+      %dd
+        = @platforms.long
 
   %table
     %tr
