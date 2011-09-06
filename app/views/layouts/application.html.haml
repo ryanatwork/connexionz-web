@@ -9,5 +9,13 @@
 
   %body
     .container
+      %ul.tabs
+        %li
+          = link_to 'Home', root_path
+        %li
+          = link_to 'Bus Stops', platforms_path
+        %li
+          = link_to 'Arrivals', eta_path
+
       = yield
 
