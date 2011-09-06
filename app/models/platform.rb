@@ -26,6 +26,10 @@ class Platform < ActiveRecord::Base
     @platform_info.route_position_et.content.max_arrival_scope
   end
 
+  def connexionz
+    client
+  end
+
   private
 
   def client
