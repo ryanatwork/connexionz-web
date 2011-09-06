@@ -6,9 +6,9 @@ class PlatformsController < ApplicationController
       redirect_to platform_path(params[:id])
     else
       @platforms = Platform.all
+      respond_with(@platforms)
     end
 
-    respond_with(@platforms)
   end
 
   def show
