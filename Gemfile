@@ -13,7 +13,7 @@ end
 gem 'connexionz'
 gem 'haml'
 gem 'jquery-rails'
-gem 'patron', " <= 0.4.14"
+gem 'patron'
 
 
 platforms :jruby do

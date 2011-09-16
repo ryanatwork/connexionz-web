@@ -162,7 +162,7 @@ DEPENDENCIES
   jquery-rails
   jruby-openssl
   mocha
-  patron (<= 0.4.14)
+  patron
   pg
   rails (= 3.1.0)
   rspec-rails
