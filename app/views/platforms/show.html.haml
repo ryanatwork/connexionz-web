@@ -40,16 +40,16 @@
       %th ETA
     - if @route_et.route.nil?
       %td= "No arrivals for next #{@arrival_scope} minutes"
-    - elsif @route_et.route.class == Array
+    - elsif @route_et.route.class.is_a?(Array)
       - @route_et.route.each do |platform|
         %tr
           %td= platform.route_no
-          - if platform.destination.class == Array
+          - if platform.destination.class.is_a?(Array)
             - platform.destination.each do |destination|
               %td= destination.name
           - else
             %td= platform.destination.name
-          - if platform.destination.trip.class == Array
+          - if platform.destination.trip.class.is_a?(Array)
             - platform.destination.trip.each do |trip|
               %td= trip.eta
           - else
